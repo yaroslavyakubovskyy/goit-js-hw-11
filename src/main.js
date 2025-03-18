@@ -34,6 +34,7 @@ const onSearchFormSubmit = event => {
       message: 'Input cannot be empty!',
       color: '#ff0000',
     });
+    hideLoader();
     return;
   }
 
