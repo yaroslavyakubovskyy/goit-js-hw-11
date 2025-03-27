@@ -1,9 +1,6 @@
 import iziToast from 'izitoast';
 
-import {
-  createGalleryCardTemplate,
-  createLightBox,
-} from './js/render-functions';
+import { createGalleryCardTemplate, lightbox } from './js/render-functions';
 import { fetchPhotosByQuery } from './js/pixabay-api';
 
 const refs = {
@@ -57,7 +54,7 @@ const onSearchFormSubmit = event => {
         .join('');
 
       refs.gallery.innerHTML = galleryCardsTemplate;
-      createLightBox();
+      lightbox.refresh();
     })
     .catch(err => {
       iziToast.error({ title: 'Error', message: error.message });
